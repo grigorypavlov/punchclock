@@ -4,12 +4,11 @@ import javax.persistence.*;
 
 @Entity
 public class Overtime {
+    private final int employeeWorkingHours = 40;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
-
-    private int employeeWorkingHours = 40;
     public double currentTotalOvertime;
 
     public Long getId() {

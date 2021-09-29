@@ -24,19 +24,19 @@ public class OvertimeController {
     }
 
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.CREATED) //adds overtime on request
     public Overtime createOvertime(@Valid @RequestBody Overtime overtime) {
         return overtimeService.createOvertime(overtime);
     }
 
     @DeleteMapping("/{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @ResponseStatus(HttpStatus.NO_CONTENT) //subtracts overtime on request
     public void deleteOvertime(@PathVariable long id) {
         overtimeService.deleteOvertime(id);
     }
 
     @PutMapping("/{id}")
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.OK) //updates overtime on request
     public Overtime updateOvertime(@Valid @RequestBody Overtime overtime) {
         return overtimeService.updateOvertime(overtime);
     }

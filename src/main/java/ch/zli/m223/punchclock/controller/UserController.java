@@ -24,19 +24,19 @@ public class UserController {
     }
 
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.CREATED) //creates new user on request
     public User createUser(@Valid @RequestBody User user) {
         return userService.createUser();
     }
 
     @DeleteMapping("/{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @ResponseStatus(HttpStatus.NO_CONTENT) //deletes existing user on request
     public void deleteUser(@PathVariable long id) {
         userService.deleteUser(id);
     }
 
     @PutMapping("/{id}")
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.OK) //updates existing on request
     public User updateUser(@Valid @RequestBody User user) {
         return userService.updateUser(user);
     }

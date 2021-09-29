@@ -18,25 +18,26 @@ public class WorkLocationController {
     }
 
     @GetMapping
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.OK) //gets locations on request
     public List<WorkLocation> getWorkLocations() {
         return workLocationService.findAll();
     }
 
+    //below are the methods locked for admin-use only
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.CREATED) //adds new location on request
     public WorkLocation createWorkLocation(@Valid @RequestBody WorkLocation workLocation) {
         return workLocationService.createWorkLocation;
     }
 
     @DeleteMapping("/{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @ResponseStatus(HttpStatus.NO_CONTENT) //deletes location on request
     public void deleteWorkLocation(@PathVariable long id) {
         workLocationService.deleteWorkLocation(id);
     }
 
     @PutMapping("/{id}")
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.OK) //updates location on request
     public WorkLocation updateWorkLocation(@Valid @RequestBody WorkLocation workLocation) {
         return workLocationService.updateLocation(workLocation);
     }
