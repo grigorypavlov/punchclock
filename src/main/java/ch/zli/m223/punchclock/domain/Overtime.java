@@ -1,9 +1,9 @@
-package ch.zli.m223.punchclock.overtime;
+package ch.zli.m223.punchclock.domain;
 
 import javax.persistence.*;
 
 @Entity
-public class OvertimeController {
+public class Overtime {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
